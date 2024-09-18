@@ -1,0 +1,68 @@
+﻿@model DataAccessLayer.Entity.CricketerDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CricketerDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CricketersID" class="control-label"></label>
+                <input asp-for="CricketersID" class="form-control" />
+                <span asp-validation-for="CricketersID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CricketerName" class="control-label"></label>
+                <input asp-for="CricketerName" class="form-control" />
+                <span asp-validation-for="CricketerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Totalinnings" class="control-label"></label>
+                <input asp-for="Totalinnings" class="form-control" />
+                <span asp-validation-for="Totalinnings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalScore" class="control-label"></label>
+                <input asp-for="TotalScore" class="form-control" />
+                <span asp-validation-for="TotalScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfFifties" class="control-label"></label>
+                <input asp-for="NumberOfFifties" class="form-control" />
+                <span asp-validation-for="NumberOfFifties" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfHundreds" class="control-label"></label>
+                <input asp-for="NumberOfHundreds" class="form-control" />
+                <span asp-validation-for="NumberOfHundreds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HighestScore" class="control-label"></label>
+                <input asp-for="HighestScore" class="form-control" />
+                <span asp-validation-for="HighestScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

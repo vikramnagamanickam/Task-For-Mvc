@@ -1,0 +1,77 @@
+﻿@model IEnumerable<DataAccessLayer.Entity.CricketerDetails>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CricketersID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CricketerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totalinnings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfFifties)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfHundreds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HighestScore)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CricketersID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CricketerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Totalinnings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfFifties)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfHundreds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighestScore)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { CricketersID = item.CricketersID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CricketersID }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.CricketersID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
